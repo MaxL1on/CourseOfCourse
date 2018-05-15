@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseOfCourse"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF81A1FC" Offset="0"/>
+                    <GradientStop Color="#FF3632C8" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Button Click="MenuClick" Width="15" Height="15" Margin="10,0" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="https://png.icons8.com/ios/1600/xbox-menu.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <StackPanel Width="100" Margin="640,0,0,0">
+                <TextBlock x:Name="CurrentUser"/>
+                <Button Content="Exit"/>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Name="Frame"  Grid.Column="1" NavigationUIVisibility="Hidden"/>
+            <StackPanel Name="LeftPanel" Visibility="Visible">
+                <Button Click="Login_page" Content="Авторизация"/>
+                <Button Click="First_page" Content="Хуйня"/>
+                <Button Click="Music_page" Content="Музыка"/>
+                <Button Click="First_page" Content="Хуйня2"/>
+                <Button Click="First_page" Content="Хуйня3"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
